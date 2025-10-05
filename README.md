@@ -35,15 +35,14 @@ We welcome contributions to Smart Energy Tracker, a real-time energy monitoring 
 ---
 
 ## Installation
-
 1. **Clone the repository**
 
 git clone <repo>
 cd smart-energy-tracker
 
-
-
 Project structure
+
+
 invertorguard/
 │
 ├── index.html
@@ -84,151 +83,236 @@ invertorguard/
 
 
 
-How to Contribute
-
 1. Adding Features or Components
 
-Contribute new React components, utilities, or backend features.
-Examples include:
-Real-time charts for energy consumption, battery levels, or inverter status
-Custom notifications for low battery, power cuts, or system events
-Dashboard widgets for historical trends and analysis
+What to contribute
 
-Steps:
-Place new frontend components in src/components/
-Place utilities in src/utils/
-Backend logic (mock server, API endpoints) in server/
-Write clean, maintainable code and include comments
-Follow the existing folder structure for easy integration
+New React components (dashboard widgets, status cards).
+
+Utilities and helper functions.
+
+Backend/mock-server features or API endpoints.
+
+Examples
+
+Real-time charts for energy consumption, battery levels, inverter status.
+
+Custom notifications for low battery, power cuts, critical events.
+
+Dashboard widgets for historical trends and analysis.
+
+Where to place code
+
+Frontend components → src/components/
+
+Utilities → src/utils/
+
+Backend/mock logic → server/
+
+Best practices
+
+Write clean, maintainable code with comments.
+
+Follow existing folder structure and naming conventions.
 
 2. Bug Fixes
 
-Help identify and fix issues in frontend, backend, or server logic.
-Common issues to address:
-WebSocket connection errors or dropped messages
-Incorrect mock data simulation or real-time updates
-UI misalignment or broken responsive design
-Memory leaks due to intervals not being cleared
+Common issues
 
-Steps:
-Locate relevant files (src/ for frontend, server/ for backend)
-Fix the issue and test locally
-Include clear, descriptive commit messages
+WebSocket connection errors or dropped messages.
 
+Incorrect mock-data simulation or real-time update problems.
 
+UI misalignment or broken responsive behavior.
+
+Memory leaks (e.g., intervals not cleared).
+
+Steps
+
+Locate files (src/ for frontend, server/ for backend).
+
+Create a bug branch, fix, and test locally.
+
+Commit with a descriptive message and open a PR referencing the issue.
 
 3. Performance Optimization
-Improve the app’s responsiveness, load time, and efficiency.
-Examples:
-Optimize WebSocket update intervals and reduce unnecessary emissions
-Debounce or throttle frequent frontend updates
-Lazy-load heavy components or charts
-Compress assets (images, icons)
 
+Goals
 
+Improve responsiveness, reduce CPU/load, minimize UI lag.
 
-5. Testing & Quality Assurance
-Ensure system reliability and bug-free performance.
-Examples of tests to implement:
-Unit tests for React components (using Jest + React Testing Library)
-Integration tests for WebSocket events and real-time updates
+Ideas
 
+Optimize WebSocket emission frequency and update logic.
 
+Debounce/throttle frequent UI updates.
 
-Steps:
-Add test files in the appropriate folder (src/__tests__/ or server/__tests__/)
-Run tests locally before submitting
-Ensure all tests pass on multiple devices
+Lazy-load heavy components or charts.
 
+Compress and optimize assets (images/icons).
 
-6. UI / UX Improvements
-Improve the dashboard, charts, notifications, or controls.
-Suggested areas for improvement:
-Dashboard mobile responsiveness
-Color schemes for low battery, high temperature, or power cut warnings
-Animations for transitions or data updates
-Accessible design (ARIA labels, color contrast)
+4. (previously 5) Testing & Quality Assurance
 
+What to add
 
-8. Real-Time Data & Mock Server
-Enhance or expand the mock WebSocket server:
-Add new mock sensors (voltage, current, power factor)
-Simulate seasonal or usage patterns
-Improve random event simulation (power cuts, manual overrides)
-Ensure mock data structure aligns with frontend requirements
-Issues & Opportunities for Contribution
+Unit tests for React components (Jest + React Testing Library).
 
+Integration tests for WebSocket flows (mock server).
 
-7.Challenges & Opportunities
+Steps
 
-WebSocket stability — improve reconnect logic and prevent dropped messages.
-Alerts accuracy — test & refine edge-case notifications (e.g., power-cut + low battery).
-Dashboard performance — reduce chart lag during frequent real-time updates.
-Responsive UI — ensure flawless behavior on small screens and mobile devices.
-Test coverage — add unit & integration tests for frontend and server.
-Code cleanup — remove redundant code and simplify mock server/utilities.
-Security — validate/sanitize incoming socket data to avoid crashes.
-Feature expansion — add scheduling, historical charts, and user preferences.
+Add tests under src/__tests__/ or server/__tests__/.
 
+Run tests locally and ensure they pass on multiple devices/browsers.
 
+5. (previously 6) UI / UX Improvements
 
-8.Content Guidelines
+Focus areas
 
-What to Include
-Functional and well-tested code
-Clear commit messages and documentation
-Well-structured components and utilities
-Respectful and constructive contributions
-Quality Standards
-Verify real-time updates and notifications work correctly
-Test new features locally on multiple devices
-Maintain consistent styling, naming, and file structure
-Optimize performance and avoid unnecessary dependencies
+Mobile responsiveness and layout polishing.
 
+Color schemes for warnings (low battery, high temp, power cut).
 
-2.Clone & install
+Smooth animations for updates and transitions.
+
+Accessibility: ARIA labels, keyboard nav, color contrast.
+
+Steps
+
+Update styles in src/index.css or component-level CSS.
+
+Test across devices/resolutions.
+
+6. (previously 8) Real-Time Data & Mock Server
+
+Enhancements
+
+Add mock sensors: voltage, current, power factor.
+
+Simulate seasonal or daily usage patterns.
+
+Better random event simulation (power cuts, manual overrides).
+
+Ensure mock payloads match frontend expectations.
+
+Files
+
+Server mock code → server/mock-socket-server.js
+
+Optional dev helpers → src/utils/mockSocketServer.js
+
+7. Challenges & Opportunities (short)
+
+WebSocket stability — improve reconnect & retry logic.
+
+Alerts accuracy — handle edge cases (e.g., power-cut + low battery).
+
+Dashboard performance — reduce chart lag with high-frequency updates.
+
+Responsive UI — perfect mobile behavior on smaller screens.
+
+Test coverage — add unit/integration tests.
+
+Code cleanup — remove redundant code in mock server/utilities.
+
+Security — validate & sanitize incoming socket data.
+
+Feature expansion — scheduling, historical charts, user preferences.
+
+8. Content Guidelines & Quality Standards
+
+What to include
+
+Functional, well-tested code.
+
+Clear commit messages and documentation.
+
+Well-structured components and utilities.
+
+Respectful and constructive contributions.
+
+Quality checks
+
+Verify real-time updates & notifications behave correctly.
+
+Test changes on multiple devices before PR.
+
+Keep consistent styling, naming, and folder structure.
+
+Avoid adding unnecessary dependencies.
+
+Quick Setup & Run (point-wise commands)
+
+Clone
 
 git clone <repo-url>
 cd invertorguard
+
+
+Install frontend deps
+
 npm install
 
-3.Start mock socket server (dev demo)
 
-# in one terminal
+Install server deps
+
+cd server
+npm install express socket.io cors
+cd ..
+
+
+Start mock server (terminal 1)
+
 npm run mock-server
-# (script maps to node server/mock-socket-server.js)
+# or: node server/mock-socket-server.js
 
 
-4.Start frontend
+Start frontend dev server (terminal 2)
 
-# in another terminal
 npm run dev
 # open http://localhost:5173
 
+Additional install notes
 
-5.Install frontend dependencies
+If you prefer one-step for server deps, create server/package.json and run npm install inside server/.
 
-npm install
-npm install express socket.io cors
+Ensure Node version >= 20.19 or LTS v22+ for best compatibility with Vite and modern packages.
 
-
-
-Technologies Used
+Technologies Used (point-wise)
 
 Frontend: React, Vite, React Router
+
 Styling: Tailwind CSS, Bootstrap
-Charts: Recharts
+
+Charts: Recharts or Chart.js
+
 Animations: Framer Motion
-Real-time: Socket.IO
-Notifications: React Toastify
 
+Realtime: Socket.IO (client + server)
 
+Notifications: react-toastify / react-hot-toast
 
-Contact
+Date utils: date-fns
 
-For questions, feature requests, or suggestions:
-Open a GitHub issue
-Contact the maintainers via GitHub
+Contribution Workflow (short)
+
+git checkout -b feat/your-feature
+
+Implement & test locally
+
+git add . && git commit -m "feat: short description"
+
+git push origin feat/your-feature
+
+Open a Pull Request with description & screenshots
+
+Reporting Issues & Contact
+
+Open a GitHub Issue for bugs, feature requests, or questions.
+
+Include reproduction steps, logs, screenshots, and expected vs actual behavior.
+
+For urgent help, tag maintainers in the issue or contact via GitHub profile.
 
 
 
