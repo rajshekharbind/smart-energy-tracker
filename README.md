@@ -159,19 +159,21 @@ Ensure mock data structure aligns with frontend requirements
 Issues & Opportunities for Contribution
 
 
-7.Here are some current challenges and opportunities in the project:
-WebSocket Stability: Connection drops or reconnection logic needs improvement.
-Battery & Inverter Alerts: Notifications for edge cases (e.g., sudden power cut + low battery) need testing.
-Dashboard Optimization: Charts sometimes lag on real-time updates; frontend performance improvements needed.
-Responsive Design: Ensure UI works perfectly on all devices, especially smaller screens.
-Testing Coverage: Unit and integration tests are minimal; need more automated tests.
-Code Cleanup: Remove redundant code in mock server and frontend utilities.
-Security: Validate and sanitize incoming WebSocket messages to prevent crashes.
-Feature Expansion: Implement scheduling, historical data charts, or user preferences.
+7.Challenges & Opportunities
+
+WebSocket stability — improve reconnect logic and prevent dropped messages.
+Alerts accuracy — test & refine edge-case notifications (e.g., power-cut + low battery).
+Dashboard performance — reduce chart lag during frequent real-time updates.
+Responsive UI — ensure flawless behavior on small screens and mobile devices.
+Test coverage — add unit & integration tests for frontend and server.
+Code cleanup — remove redundant code and simplify mock server/utilities.
+Security — validate/sanitize incoming socket data to avoid crashes.
+Feature expansion — add scheduling, historical charts, and user preferences.
 
 
 
 8.Content Guidelines
+
 What to Include
 Functional and well-tested code
 Clear commit messages and documentation
@@ -185,29 +187,34 @@ Optimize performance and avoid unnecessary dependencies
 
 
 2.Clone & install
+
 git clone <repo-url>
 cd invertorguard
 npm install
 
 3.Start mock socket server (dev demo)
+
 # in one terminal
 npm run mock-server
 # (script maps to node server/mock-socket-server.js)
 
 
 4.Start frontend
+
 # in another terminal
 npm run dev
 # open http://localhost:5173
 
 
 5.Install frontend dependencies
+
 npm install
 npm install express socket.io cors
 
 
 
 Technologies Used
+
 Frontend: React, Vite, React Router
 Styling: Tailwind CSS, Bootstrap
 Charts: Recharts
@@ -218,6 +225,7 @@ Notifications: React Toastify
 
 
 Contact
+
 For questions, feature requests, or suggestions:
 Open a GitHub issue
 Contact the maintainers via GitHub
