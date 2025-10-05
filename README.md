@@ -38,7 +38,6 @@ We welcome contributions to Smart Energy Tracker, a real-time energy monitoring 
 
 1. **Clone the repository**
 
-```bash
 git clone <repo>
 cd smart-energy-tracker
 
@@ -83,6 +82,8 @@ invertorguard/
 │
 └── server/
    └── mock-socket-server.js         # Node + socket.io demo server (dev)
+
+
 
 How to Contribute
 
@@ -200,13 +201,18 @@ npm run dev
 npm install
 npm install express socket.io cors
 
+
+
 Technologies Used
+
 Frontend: React, Vite, React Router
 Styling: Tailwind CSS, Bootstrap
 Charts: Recharts
 Animations: Framer Motion
 Real-time: Socket.IO
 Notifications: React Toastify
+
+
 
 Contact
 
