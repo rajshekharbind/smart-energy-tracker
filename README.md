@@ -44,7 +44,6 @@ cd smart-energy-tracker
 
 
 Project structure
-
 invertorguard/
 │
 ├── index.html
@@ -81,7 +80,7 @@ invertorguard/
 │       └── images/
 │
 └── server/
-   └── mock-socket-server.js         # Node + socket.io demo server (dev)
+    └── mock-socket-server.js         # Node + socket.io demo server (dev)
 
 
 
@@ -112,13 +111,13 @@ UI misalignment or broken responsive design
 Memory leaks due to intervals not being cleared
 
 Steps:
-
 Locate relevant files (src/ for frontend, server/ for backend)
 Fix the issue and test locally
 Include clear, descriptive commit messages
 
-3. Performance Optimization
 
+
+3. Performance Optimization
 Improve the app’s responsiveness, load time, and efficiency.
 Examples:
 Optimize WebSocket update intervals and reduce unnecessary emissions
@@ -126,21 +125,23 @@ Debounce or throttle frequent frontend updates
 Lazy-load heavy components or charts
 Compress assets (images, icons)
 
+
+
 5. Testing & Quality Assurance
-
 Ensure system reliability and bug-free performance.
-
 Examples of tests to implement:
 Unit tests for React components (using Jest + React Testing Library)
 Integration tests for WebSocket events and real-time updates
+
+
 
 Steps:
 Add test files in the appropriate folder (src/__tests__/ or server/__tests__/)
 Run tests locally before submitting
 Ensure all tests pass on multiple devices
 
-6. UI / UX Improvements
 
+6. UI / UX Improvements
 Improve the dashboard, charts, notifications, or controls.
 Suggested areas for improvement:
 Dashboard mobile responsiveness
@@ -148,8 +149,8 @@ Color schemes for low battery, high temperature, or power cut warnings
 Animations for transitions or data updates
 Accessible design (ARIA labels, color contrast)
 
-7. Real-Time Data & Mock Server
 
+8. Real-Time Data & Mock Server
 Enhance or expand the mock WebSocket server:
 Add new mock sensors (voltage, current, power factor)
 Simulate seasonal or usage patterns
@@ -159,8 +160,6 @@ Issues & Opportunities for Contribution
 
 
 7.Here are some current challenges and opportunities in the project:
-
-
 WebSocket Stability: Connection drops or reconnection logic needs improvement.
 Battery & Inverter Alerts: Notifications for edge cases (e.g., sudden power cut + low battery) need testing.
 Dashboard Optimization: Charts sometimes lag on real-time updates; frontend performance improvements needed.
@@ -169,6 +168,8 @@ Testing Coverage: Unit and integration tests are minimal; need more automated te
 Code Cleanup: Remove redundant code in mock server and frontend utilities.
 Security: Validate and sanitize incoming WebSocket messages to prevent crashes.
 Feature Expansion: Implement scheduling, historical data charts, or user preferences.
+
+
 
 8.Content Guidelines
 What to Include
@@ -182,6 +183,7 @@ Test new features locally on multiple devices
 Maintain consistent styling, naming, and file structure
 Optimize performance and avoid unnecessary dependencies
 
+
 2.Clone & install
 git clone <repo-url>
 cd invertorguard
@@ -192,10 +194,12 @@ npm install
 npm run mock-server
 # (script maps to node server/mock-socket-server.js)
 
+
 4.Start frontend
 # in another terminal
 npm run dev
 # open http://localhost:5173
+
 
 5.Install frontend dependencies
 npm install
@@ -204,7 +208,6 @@ npm install express socket.io cors
 
 
 Technologies Used
-
 Frontend: React, Vite, React Router
 Styling: Tailwind CSS, Bootstrap
 Charts: Recharts
@@ -215,7 +218,6 @@ Notifications: React Toastify
 
 
 Contact
-
 For questions, feature requests, or suggestions:
 Open a GitHub issue
 Contact the maintainers via GitHub
