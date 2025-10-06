@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "devDependencies": {
     "@commitlint/cli": "^19.1.0",
     "@commitlint/config-conventional": "^19.1.0",
@@ -9,8 +8,7 @@
     "prepare": "husky",
     "commitlint": "commitlint --edit"
   },
-  "type": "module"
-=======
+  "type": "module",
   "name": "smart-energy-tracker",
   "private": true,
   "version": "0.0.0",
@@ -51,5 +49,4 @@
     "globals": "^16.4.0",
     "vite": "^7.1.7"
   }
->>>>>>> 3c3be86 (initial commit)
 }
